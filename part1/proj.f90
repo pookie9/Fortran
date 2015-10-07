@@ -1,5 +1,5 @@
 !  F90 (Fortran 90) written by King and Groves to fulfill Part 1 for Programming Languages
-!  Does Parts A,B,C,D and G
+!  Does Parts A,B,C,D and G, sorry the formatting is ugly, you literally cannot format well in Fortran, I spent three hours trying to
 
 program bottles
   implicit none !Used to say that implicit type casting is now allowed
