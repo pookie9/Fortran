@@ -47,7 +47,8 @@ subroutine primeFactors(n)
         !otherwise it will pad with spaces, so if you give it a number with a factor > 5 digits, this won't work
         !But it still looks stupid this way because if often has 4 extra spaces, there is just no way to do pretty formatting
         !in Fortran, it is literally not possible
-        write(*,"(i5)",advance="no"), i
+        write(*,"(i5)",advance="no"),i
+        write(*,"(a1)",advance="no"), '*'
         m=m/i
      else
         i=i+1
