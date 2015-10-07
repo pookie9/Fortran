@@ -1,4 +1,4 @@
+FORTRAN90, King, Groves
 compile and run with:
 gfortran -std=legacy proj.f90 -o proj; ./proj
 
-Please note that the format of the outputted statements is pretty ugly, sorry, FORTRAN makes it impossible to have flexible programs with nice output.
