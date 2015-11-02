@@ -1,0 +1,42 @@
+!  F90 (Fortran 90) version of 99 bottles of beer.
+!    written by Akira KIDA,  SDI00379@niftyserver.or.jp
+!    Note that this source is in FIXED format.
+
+program bottles
+    implicit none
+    integer::i
+    integer::numBottles
+    print*,'Enter the number of lines'
+    read (*,*)numBottles
+    do i = 1,numBottles-1
+       if (i == 1) then
+          print*,'1 line of text on the screen, 1 line of text.'
+       else
+          print*,i,' lines of text on the screen, ',i,' lines of text.'
+       end if
+       print*,'Print it out, stand up and shout, ',i+1,' lines of text on the screen.'
+    end do
+end program bottles
+
+!Returns a dynamic array of the prime factors of n
+function primeFactors(n)
+  implicit none
+  integer,dimension(:),allocatable::factors !array to hold factors
+  integer::i
+  integer::counter
+  !no more than log base 2 factors of a number so this approximates that I need to make a Vector type "object" for the future
+  allocate(factors(2*log(n)))
+
+  i=2
+  counter=0
+  do while (n>=i)
+     !does not support % for modular division, have to use mod(a,b) instead to get the equivalent of a%b
+     if (mod(n, i)==0) ! i is a factor of n
+        factors(counter)=i
+        counter=counter+1
+     else
+        i=i+1
+     end if
+  end do
+  
+end function primeFactors
