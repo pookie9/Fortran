@@ -1,7 +1,2 @@
-We will do a hangman game and then maybe add in a "evil hangman" option.
-
-Several of the things that we will implement for the hangman game will be useful for all future work in the project. Like a generic print function that will print any length integer or string correctly. I realized that you can do this easily by printing them one character at a time with a nice recursive method. We will also make a vector struct and corresponding methods so we don't have to work directly with the annoying dynamic arrays that Fortran has.
-
-The hangman game will consist of reading in a random word from a dictionary file and then playing the game with the user. It will consist of about 8 different ascii sequences that correspond to the various states of the soon-to-be-hanged man. There will be a lot of usage of the generic print function that we will write.
-
-The "evil hangman" game will never actually pick a word. Instead it will pick a random length of word, and then keep a list of possible words so far. It will prune that list s.t. it will be almost impossible for the user to win. This might mean that if the user guesses the letter 'z' saying that z is not in the word, and then eliminating all words in the list that contain the letter z. However, if the user guesses the letter 'e' it might not want to eliminate all words that contain the letter 'e' because that would make the list of possible words very small, however, it would then need to decide where in the word that 'e' should go which would prune the list down immensely. I've almost finished the full algorithm for how it would decide whether or not to give up a letter. 
+Basic hangman game. Compile and run with this:
+gfortran -std=legacy proj.f90 -o proj; ./proj
