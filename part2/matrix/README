@@ -1,2 +1,28 @@
-Basic hangman game. Compile and run with this:
+Basic Matrix Calculator. Reads in and performs either addition, subtraction, and multiplication on matrices of integers until the user exits.
+
+INSTRUCTIONS:
+
+1. respond to the prompt with "0", "1", "2", "3" to exit the program, add matrices, subtract matrices, or multiply matrices. (if "0" is entered or any 
+	undefined integer, the program will terminate.)
+
+2. give the requested dimensions to the program in integer format.
+
+3. fill the matrix one item at a time with an integer. the prompt is asking for each element by "row column" format (i.e. "Enter element 'row' 'column': ).
+
+4. matrices are printed out to user in human readable format:
+
+		 M_1 
+
+		 "OP" 
+
+		 M_2 
+
+		 = 
+
+		 M_3
+
+5. return to step 1.
+
+Compile and run with this:
+
 gfortran -std=legacy proj.f90 -o proj; ./proj
