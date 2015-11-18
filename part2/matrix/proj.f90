@@ -42,8 +42,8 @@ subroutine addition
   
   use readMatrix
   implicit none
-  integer,allocatable :: matrix1(:,:), matrix2(:,:)
-  integer::x,y,stat
+  integer,allocatable :: matrix1(:,:), matrix2(:,:), matrix3(:,:)
+  integer::x,y,stat,i,j
 
   write(*,*)"Enter the row dimension of your matrices: "
   read(*,*)x
@@ -58,12 +58,32 @@ subroutine addition
 
   allocate( matrix2(x,y), stat=stat)
   if (stat/=0) stop 'Cannot Allocate Memory'
-  
+  allocate( matrix3(x,y), stat=stat)
+  if (stat/=0) stop 'Cannot Allocate Memory'
   matrix1 = fillMatrix(x, y)
   matrix2 = fillMatrix(x, y)
 
+  do i=1, x
+    do j=1, y
+      matrix3(i,j) = matrix1(i,j) + matrix2(i,j)
+    enddo
+  enddo
+  
+  write(*,*)""
   call writeMatrix(matrix1, x, y)
+
+  write(*,*)""
+  write(*,*)"+"
+  write(*,*)""
+
   call writeMatrix(matrix2, x, y)
+
+  write(*,*)""
+  write(*,*)"="
+  write(*,*)""
+
+  call writeMatrix(matrix3, x, y)
+
 
   deallocate(matrix1)
   deallocate(matrix2)
