@@ -1,0 +1,2 @@
+Basic hangman game. Compile and run with this:
+gfortran -std=legacy proj.f90 -o proj; ./proj
